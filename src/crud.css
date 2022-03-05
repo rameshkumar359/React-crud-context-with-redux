@@ -1,0 +1,17 @@
+.main{
+    border:2px solid black;
+    height:93vh;
+    overflow:auto;
+    background-color:darkgray;
+}
+.Navbar{
+    border:2px solid black;
+    padding:30px;
+    text-align:center;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    color:white;
+    font-size:25px;
+
+}

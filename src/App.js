@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import {Home} from './components/Home';
+import {Edit} from './components/Edit';
+import {Adduser} from './components/Adduser';
+import {Error} from './components/Error';
+import{BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import {Globalprovider} from './context/Globalstate'
+import './crud.css'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main">
+      <div className="Navbar bg-dark">Navbar</div>
+    <div style={{ maxWidth: "30rem", margin: "4rem auto" }}>
+      <Globalprovider>
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Home/>}/>
+          <Route  path="/edit/:id" element={<Edit/>}/>
+          <Route  path="/add" element={<Adduser/>}/>
+          <Route path="*" element={<Error/>}/>
+        </Routes>
+      </Router>
+      </Globalprovider>
+    </div>
     </div>
   );
 }
